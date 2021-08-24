@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bedrooms: 1
+  bathrooms: 1
+  sqft: 1
+  unit: MyString
+  address: MyString
+
+two:
+  bedrooms: 1
+  bathrooms: 1
+  sqft: 1
+  unit: MyString
+  address: MyString
