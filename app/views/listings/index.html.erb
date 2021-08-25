@@ -1,0 +1,3 @@
+<% @listings.each do |listing| %>
+  <%= link_to listing.address, listing_path(listing) %>
+<% end %>

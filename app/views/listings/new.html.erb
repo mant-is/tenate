@@ -1,20 +1,14 @@
 <h1>Create a new listing</h1>
-
 <%= form_with model: @listing do |form| %>
   <%= form.label :address %> 
   <%= form.text_field :address %>
-  
   <%= form.label :unit %>
   <%= form.text_field :unit, max_length: 4 %>
-
   <%= form.label :bedrooms %>
   <%= form.select :bedrooms, 0..5 %>
-
   <%= form.label :bathrooms %>
   <%= form.select :bathrooms, 1..5 %>
-
   <%= form.label :sqft, 'Square feet:' %>
   <%= form.number_field :sqft, in: { min: 100, max: 100000 } %>
-
   <%= form.submit 'Add listing' %>
 <% end %> 
