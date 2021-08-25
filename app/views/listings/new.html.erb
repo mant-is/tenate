@@ -10,5 +10,6 @@
   <%= form.select :bathrooms, 1..5 %>
   <%= form.label :sqft, 'Square feet:' %>
   <%= form.number_field :sqft, in: { min: 100, max: 100000 } %>
+  <%= form.file_field :images, multiple: true, direct_upload: true %>
   <%= form.submit 'Add listing' %>
 <% end %> 

@@ -4,4 +4,5 @@
   <li>Bedrooms: <%= @listing.bedrooms %></li>
   <li>Bathrooms: <%= @listing.bathrooms %></li>
   <li>Size: <%= @listing.sqft %> ft<sup>2</sup></li>
+  <%= image_tag url_for(@listing.images.first), size: "450x300" if @listing.images.attached? %>
 </ul>
