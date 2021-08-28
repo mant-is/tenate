@@ -1,0 +1,14 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+
+  .page-main {
+    flex: 1 1 auto;
+    
+    .relative {
+      position: relative;
+    }
+  }
+}

@@ -1,15 +1,32 @@
-<h1>Create a new listing</h1>
-<%= form_with model: @listing do |form| %>
-  <%= form.label :address %> 
-  <%= form.text_field :address %>
-  <%= form.label :unit %>
-  <%= form.text_field :unit, max_length: 4 %>
-  <%= form.label :bedrooms %>
-  <%= form.select :bedrooms, 0..5 %>
-  <%= form.label :bathrooms %>
-  <%= form.select :bathrooms, 1..5 %>
-  <%= form.label :sqft, 'Square feet:' %>
-  <%= form.number_field :sqft, in: { min: 100, max: 100000 } %>
-  <%= form.file_field :images, multiple: true, direct_upload: true %>
-  <%= form.submit 'Add listing' %>
-<% end %> 
+<div class="sm:mx-auto sm:w-full sm:max-w-md">
+  <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Create a new listing</h1>
+  <%= form_with model: @listing do |form| %>
+    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+      <div class="sm:col-span-6 grid">
+        <%= form.label :address, class: "text-sm font-medium text-gray-700" %> 
+        <%= form.text_field :address, class: "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-96 sm:text-sm border-gray-300 rounded-md" %>
+      </div>
+      <div class="sm:col-span-6">
+        <%= form.label :unit, class: "text-sm font-medium block text-gray-700" %>
+        <%= form.text_field :unit, max_length: 4, class: "block shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-24 sm:text-sm border-gray-300 rounded-md" %>
+      </div>
+      <div class="sm:col-span-3">
+        <%= form.label :bedrooms, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :bedrooms, 0..5, {}, class: "mt-1 block w-24 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" %>
+      </div>
+      <div class="sm:col-span-3">
+        <%= form.label :bathrooms, class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :bathrooms, 1..5, {}, class: "mt-1 block w-24 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" %>
+      </div>
+      <div class="sm:col-span-3">
+        <%= form.label :sqft, 'Square feet:', class: "block text-sm font-medium text-gray-700" %>
+        <%= form.number_field :sqft, in: { min: 100, max: 100000 }, class: "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-24 sm:text-sm border-gray-300 rounded-md" %>
+      </div>
+      <div class="sm:col-span-3">
+        <%= form.label :images, 'Upload photos', class: "block text-sm font-medium text-gray-700" %>
+        <%= form.file_field :images, multiple: true, direct_upload: true, class: "" %>
+      </div>
+      <div class="my-4"><%= form.submit 'Add listing', class: "inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %></div>
+    </div>
+  <% end %> 
+</div>

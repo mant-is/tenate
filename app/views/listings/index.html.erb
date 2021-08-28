@@ -1,3 +1,5 @@
+<ul class="list-none">
 <% @listings.each do |listing| %>
-  <%= link_to listing.address, listing_path(listing) %>
+  <li><%= link_to listing.address, listing_path(listing) %></li>
 <% end %>
+</ul>
