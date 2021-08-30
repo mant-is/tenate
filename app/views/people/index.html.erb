@@ -1,0 +1,4 @@
+<h1>People List</h1>
+<% @people.each do |person| %>
+  <%= link_to(person.first_name + ' ' + person.last_name, person_path(person)) %>
+<% end %>
